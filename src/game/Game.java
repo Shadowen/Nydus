@@ -1,14 +1,37 @@
 package game;
 
+import java.awt.Point;
+import java.util.ArrayList;
+
+import astar.AStarPathfinder;
 import graphics.DisplayFrame;
 
 public class Game {
 	public static void main(String[] args) {
-		Map m = new Map();
+		new Game();
+	}
 
-		Pathfinder p = new Pathfinder(m);
-		DisplayFrame d = new DisplayFrame(m);
+	private Pathfinder p;
+	private DisplayFrame d;
+	private Map map;
 
-		d.drawPath(p.findPath(0, 2, 9, 3));
+	public Game() {
+		map = new Map();
+
+		p = new AStarPathfinder(map);
+		d = new DisplayFrame(this, map);
+	}
+
+	public void tileClicked(int x, int y) {
+		d.drawPath(p.findPath(0, 0, x, y));
+	}
+
+	public void regenerateMap() {
+		// Generate a new map
+		map.regenerate();
+		// Clear the path
+		d.drawPath(new ArrayList<Point>());
+		// Draw everything
+		d.repaint();
 	}
 }
