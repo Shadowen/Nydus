@@ -12,10 +12,8 @@ import java.util.SortedSet;
 import java.util.TreeSet;
 
 public class AStarPathfinder extends Pathfinder {
-	private Map map;
-
 	public AStarPathfinder(Map m) {
-		map = m;
+		super(m);
 	}
 
 	public List<Point> findPath(int startx, int starty, int endx, int endy) {
