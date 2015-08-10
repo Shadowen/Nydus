@@ -1,7 +1,7 @@
 # Nydus
-A Java test bed for testing pathfinding algorithms.
+A Java test bed for testing pathfinding algorithms. This project features a graphical display for various pathfinding algorithms.
 
-The project features a graphical display for various pathfinding algorithms.
+![image](https://cloud.githubusercontent.com/assets/8551479/9174371/61ea336c-3f4d-11e5-9bf9-a217a316ad07.png)
 
 ## Algorithms
 Arbitrary pathfinding algorithms can be plugged into the interface for this project. The purpose is to practice and demonstrate the usage of the algorithms. 
