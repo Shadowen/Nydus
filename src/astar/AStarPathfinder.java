@@ -12,20 +12,21 @@ import java.util.SortedSet;
 import java.util.TreeSet;
 
 public class AStarPathfinder extends Pathfinder {
+	List<ArrayList<Node>> nodes;
+
 	public AStarPathfinder(Map m) {
 		super(m);
-	}
-
-	public List<Point> findPath(int startx, int starty, int endx, int endy) {
 		// Init node-map
-		List<ArrayList<Node>> nodes = new ArrayList<ArrayList<Node>>();
+		nodes = new ArrayList<ArrayList<Node>>();
 		for (int x = 0; x < map.getWidth(); x++) {
 			nodes.add(new ArrayList<Node>());
 			for (int y = 0; y < map.getHeight(); y++) {
 				nodes.get(x).add(new Node(x, y, map.isTileWalkable(x, y)));
 			}
 		}
+	}
 
+	public List<Point> findPath(int startx, int starty, int endx, int endy) {
 		NodeSet openSet = new NodeSet();
 		nodes.get(startx).get(starty).costFromStart = 0;
 		nodes.get(startx).get(starty).predictedTotalCost = nodes.get(startx)
@@ -93,7 +94,7 @@ public class AStarPathfinder extends Pathfinder {
 		return neighbors;
 	}
 
-	public List<Point> reconstructPath(List<Point> path, Node finalNode) {
+	private List<Point> reconstructPath(List<Point> path, Node finalNode) {
 		path.add(new Point(finalNode.x, finalNode.y));
 
 		// Base case

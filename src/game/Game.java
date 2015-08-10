@@ -17,8 +17,8 @@ public class Game {
 
 	public Game() {
 		map = new Map();
-
 		p = new AStarPathfinder(map);
+
 		d = new DisplayFrame(this, map);
 	}
 
@@ -29,6 +29,8 @@ public class Game {
 	public void regenerateMap() {
 		// Generate a new map
 		map.regenerate();
+		p = new AStarPathfinder(map);
+
 		// Clear the path
 		d.drawPath(new ArrayList<Point>());
 		// Draw everything
