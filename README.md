@@ -8,6 +8,7 @@ Arbitrary pathfinding algorithms can be plugged into the interface for this proj
 - [ ] Dijkstra 
 - [x] A*
   - [x] Depth-limited A* (see [Lightning AI](https://github.com/Shadowen/Lightning-AI))
+  - [x] Annotated A* (see [Lightning AI](https://github.com/Shadowen/Lightning-AI))
   - [ ] Heirarchical A*
 - [ ] Boid (see [Zergling Speed](https://github.com/Shadowen/ZerglingSpeed))
 
